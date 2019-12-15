@@ -1,0 +1,2 @@
+include ':app', ':eternalviewpager-1.0.0', ':threetenbp-1.4.0'
+rootProject.name='Calendar'

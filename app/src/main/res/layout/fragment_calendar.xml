@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CalendarFragment">
+
+    <data>
+        <variable
+            name="yearMonth"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="?attr/customLineColor">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/customBackColor"
+            android:text="@{yearMonth}"
+            android:textSize="18sp"
+            tools:text="te月st日" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_weight="1"
+                android:textColor="?attr/customRedTextColor"
+                android:background="?attr/customSunColor"
+                android:text="@string/sun"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp"
+                android:textColor="?attr/customTextColor"
+                android:background="?attr/customBackColor"
+                android:text="@string/mon"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp"
+                android:textColor="?attr/customTextColor"
+                android:background="?attr/customBackColor"
+                android:text="@string/tue"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp"
+                android:textColor="?attr/customTextColor"
+                android:background="?attr/customBackColor"
+                android:text="@string/wed"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp"
+                android:textColor="?attr/customTextColor"
+                android:background="?attr/customBackColor"
+                android:text="@string/thu"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp"
+                android:textColor="?attr/customTextColor"
+                android:background="?attr/customBackColor"
+                android:text="@string/fri"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp"
+                android:textColor="?attr/customBlueTextColor"
+                android:background="?attr/customSatColor"
+                android:text="@string/sat"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/calendarTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="?attr/customTextColor"/>
+
+    </LinearLayout>
+
+</layout>

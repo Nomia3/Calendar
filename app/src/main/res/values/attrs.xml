@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCustomTheme">
+        <attr name="customTextColor" format="color" />
+        <attr name="customBackColor" format="color" />
+        <attr name="customLineColor" format="color" />
+        <attr name="customSunColor" format="color" />
+        <attr name="customSatColor" format="color" />
+        <attr name="customBlueTextColor" format="color" />
+        <attr name="customRedTextColor" format="color" />
+        <attr name="customGrayBackColor" format="color" />
+    </declare-styleable>
+</resources>
