@@ -50,7 +50,6 @@ public class CalendarActivity extends AppCompatActivity {
     @Override
     public void onDestroy(){
         super.onDestroy();
-        System.out.println("Saved");
         saveHashMap(MainActivity.map);
         finishAndRemoveTask();
     }

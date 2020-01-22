@@ -25,7 +25,7 @@ import jp.co.individual.nomia.calendar.databinding.FragmentCalendarBinding;
 public class CalendarFragment extends Fragment implements NoteDialogFragment.reloadListener {
 
     private FragmentCalendarBinding binding;
-    LocalDate date;
+    private LocalDate date;
     private static int selectingId = -1;
     private static View selectedTextView;
     private static int originalColor;
@@ -119,14 +119,14 @@ public class CalendarFragment extends Fragment implements NoteDialogFragment.rel
                     if(startDayOfWeek.getValue() != 7) {
                         j = startDayOfWeek.getValue();
                     }
-                    else if(startDayOfWeek.getValue() == 7){
+                    else{
                         j = 0;
                     }
                 }
                 //描画
                 dateTextView = (TextView) dateTableRow.getChildAt(j);
 
-                if(isGray == false) {
+                if(!isGray) {
                     dateTextView.setText(String.valueOf(dayCount));
                     tempId = Integer.parseInt(date.format(DateTimeFormatter.ofPattern("yyyyMM")));
                     tempId = tempId*100 + dayCount;
@@ -141,7 +141,7 @@ public class CalendarFragment extends Fragment implements NoteDialogFragment.rel
                 }
 
                 //次月の日付描画
-                if(isGray == true){
+                if(isGray){
                     dateTextView.setText(String.valueOf(dayCount));
                     dateTextView.setTextColor(textAttr.data);
                     dateTextView.setBackgroundColor(grayBackAttr.data);
@@ -224,7 +224,7 @@ public class CalendarFragment extends Fragment implements NoteDialogFragment.rel
 
         if(tempTag != null){
             dateTextView.append("\n" + tempTag);
-        }else if(tempTag == null){
+        }else{
             tempTag = MainActivity.map.get(new CompositeKey(textDate, "text"));
             if(tempTag != null){
                 String splitedText[] = tempTag.split("\n", 1);
@@ -246,15 +246,15 @@ public class CalendarFragment extends Fragment implements NoteDialogFragment.rel
         String tempTag;
         String checkNull = MainActivity.map.get(new CompositeKey(textDate, "tag"));
 
-        System.out.println("checkNull = " + checkNull);
-
-        if(!checkNull.equals("")){
-            textView.setText(tempDay + "\n" + MainActivity.map.get(new CompositeKey(textDate, "tag")));
-        }else if(checkNull.equals("")){
-            tempTag = MainActivity.map.get(new CompositeKey(textDate, "text"));
-            if(tempTag != null){
-                String splitedText[] = tempTag.split("\n", 1);
-                textView.setText(tempDay + "\n" + splitedText[0]);
+        if(checkNull != null){
+            if(!checkNull.equals("")){
+                textView.setText(tempDay + "\n" + MainActivity.map.get(new CompositeKey(textDate, "tag")));
+            }else{
+                tempTag = MainActivity.map.get(new CompositeKey(textDate, "text"));
+                if(tempTag != null){
+                    String splitedText[] = tempTag.split("\n", 1);
+                    textView.setText(tempDay + "\n" + splitedText[0]);
+                }
             }
         }
     }

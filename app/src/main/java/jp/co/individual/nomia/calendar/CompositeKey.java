@@ -1,6 +1,7 @@
 package jp.co.individual.nomia.calendar;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class CompositeKey implements Serializable {
 
@@ -15,11 +16,7 @@ public class CompositeKey implements Serializable {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((date == null) ? 0 : date.hashCode());
-        result = prime * result + ((type == null) ? 0 : type.hashCode());
-        return result;
+        return Objects.hash(date, type);
     }
 
     @Override

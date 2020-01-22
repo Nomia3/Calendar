@@ -49,14 +49,8 @@ public class NoteDialogFragment extends DialogFragment {
                         String tag = binding.editTag.getText().toString();
                         String text = binding.editText.getText().toString();
 
-                        System.out.println("tag = " + tag);
-                        System.out.println("text = " + text);
-
                         MainActivity.map.put(new CompositeKey(textDate, "tag"), tag);
                         MainActivity.map.put(new CompositeKey(textDate, "text"), text);
-
-                        System.out.println("tagMap = " + MainActivity.map.get(new CompositeKey(textDate, "tag")));
-                        System.out.println("textMap = " + MainActivity.map.get(new CompositeKey(textDate, "text")));
 
                         mListener.reloadTag();
                         mListener.reloadText();
